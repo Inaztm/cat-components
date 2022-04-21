@@ -1,6 +1,6 @@
 {
   "name": "cat-webcomponents",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "main": "dist/index.es.js",
   "exports": {
     ".": "./dist/index.es.js"
@@ -36,12 +36,12 @@
   "description": "This is webcomponents, build in lit, vite, typescript",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Inaztm/cat-components.git"
+    "url": "git+https://github.com/Inaztm/cat-webcomponents.git"
   },
   "author": "Inaz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Inaztm/cat-components/issues"
+    "url": "https://github.com/Inaztm/cat-webcomponents/issues"
   },
-  "homepage": "https://github.com/Inaztm/cat-components#readme"
+  "homepage": "https://github.com/Inaztm/cat-webcomponents#readme"
 }
