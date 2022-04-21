@@ -1,5 +1,5 @@
 {
-  "name": "my-webcomponents",
+  "name": "cat-components",
   "version": "1.0.0",
   "main": "dist/index.es.js",
   "exports": {
