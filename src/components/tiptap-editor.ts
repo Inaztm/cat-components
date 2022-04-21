@@ -111,7 +111,7 @@ export class TiptapEditor extends LitElement {
   }
 
   _onCreated(data: Editor) {
-    makeEvent(this.dispatchEvent.bind(this), 'onBlur', { detail: { data } });
+    makeEvent(this.dispatchEvent.bind(this), 'onCreated', { detail: { data } });
   }
 }
 
