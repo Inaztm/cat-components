@@ -1,9 +1,5 @@
 # Vite, Lit and Storybook for standalone web component development
 
-This is an article from my blog
-
-https://leon.id/articles/web-components/2022-02-vite-lit-storybook
-
 ## Install
 
 ```bash

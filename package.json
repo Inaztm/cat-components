@@ -1,6 +1,6 @@
 {
-  "name": "@inaz/cat-components",
-  "version": "1.0.0",
+  "name": "cat-webcomponents",
+  "version": "1.0.1",
   "main": "dist/index.es.js",
   "exports": {
     ".": "./dist/index.es.js"
@@ -39,7 +39,7 @@
     "url": "git+https://github.com/Inaztm/cat-components.git"
   },
   "author": "Inaz",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Inaztm/cat-components/issues"
   },
