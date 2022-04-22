@@ -6,7 +6,7 @@ import Link from '@tiptap/extension-link';
 
 const makeEvent = (eventName: string, inOptions = {}) => {
   const options = { detail: null, bubbles: true, composed: true, ...inOptions };
- return new CustomEvent(eventName, options);
+  return new CustomEvent(eventName, options);
 }
 
 /**
