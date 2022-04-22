@@ -4,9 +4,9 @@ import { Editor } from '@tiptap/core';
 import StarterKit from '@tiptap/starter-kit';
 import Link from '@tiptap/extension-link';
 
-const makeEvent = (dispatcher: any, eventName: string, inOptions = {}) => {
+const makeEvent = (eventName: string, inOptions = {}) => {
   const options = { detail: null, bubbles: true, composed: true, ...inOptions };
-  dispatcher(new CustomEvent(eventName, options));
+ return new CustomEvent(eventName, options);
 }
 
 /**
@@ -98,22 +98,22 @@ export class TiptapEditor extends LitElement {
 
   _onChange(value: string) {
     if (this.value !== value) {
-      makeEvent(this.dispatchEvent.bind(this), 'onChange', { detail: { value } });
+      this.dispatchEvent(makeEvent('onChange', { detail: { value } }));
     }
   }
 
   _onFocus() {
-    makeEvent(this.dispatchEvent.bind(this), 'onFocus');
+    this.dispatchEvent(makeEvent('onFocus'));
   }
 
   _onBlur() {
-    makeEvent(this.dispatchEvent.bind(this), 'onBlur');
+    this.dispatchEvent(makeEvent('onBlur'));
   }
 
   _onCreated(editor: Editor) {
     if (editor) {
       const editorEl: Element = editor.view.dom;
-      makeEvent(this.dispatchEvent.bind(this), 'onCreated', { detail: { editor, editorEl } });
+      this.dispatchEvent(makeEvent('onCreated', { detail: { editor, editorEl } }));
     }
   }
 }
