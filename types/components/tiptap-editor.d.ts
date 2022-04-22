@@ -16,7 +16,7 @@ export declare class TiptapEditor extends LitElement {
     _onChange(value: string): void;
     _onFocus(): void;
     _onBlur(): void;
-    _onCreated(data: Editor): void;
+    _onCreated(editor: Editor): void;
 }
 declare global {
     interface HTMLElementTagNameMap {
