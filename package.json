@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -24,14 +24,22 @@
     "@storybook/builder-vite": "^0.1.29",
     "@storybook/web-components": "^6.4.22",
     "babel-loader": "^8.2.3",
-    "lit": "^2.0.2",
+    "rollup-plugin-postcss-lit": "^2.0.0",
+    "sass": "^1.53.0",
     "typescript": "^4.5.4",
     "vite": "^2.8.0"
   },
   "dependencies": {
-    "@tiptap/core": "^2.0.0-beta.174",
-    "@tiptap/extension-link": "^2.0.0-beta.36",
-    "@tiptap/starter-kit": "^2.0.0-beta.183"
+    "@fullcalendar/core": "^5.11.0",
+    "@fullcalendar/daygrid": "^5.11.0",
+    "@fullcalendar/interaction": "^5.11.0",
+    "@fullcalendar/list": "^5.11.0",
+    "@fullcalendar/timegrid": "^5.11.0",
+    "@tiptap/core": "^2.0.0-beta.182",
+    "@tiptap/extension-link": "^2.0.0-beta.43",
+    "@tiptap/starter-kit": "^2.0.0-beta.191",
+    "bootstrap": "5.2.0",
+    "lit": "latest"
   },
   "description": "Vite, Lit and Storybook for standalone web component development",
   "repository": {

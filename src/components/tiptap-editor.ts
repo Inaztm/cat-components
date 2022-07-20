@@ -1,13 +1,9 @@
-import { html, css, LitElement } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
 import { Editor } from '@tiptap/core';
 import StarterKit from '@tiptap/starter-kit';
 import Link from '@tiptap/extension-link';
-
-const makeEvent = (eventName: string, inOptions = {}) => {
-  const options = { detail: null, bubbles: true, composed: true, ...inOptions };
-  return new CustomEvent(eventName, options);
-}
+import { html, css, LitElement } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
+import { makeEvent } from '../helpers';
 
 /**
  * An example element.

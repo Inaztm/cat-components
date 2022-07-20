@@ -1,0 +1,13 @@
+@import "@fullcalendar/common/main.css";
+@import "@fullcalendar/daygrid/main.css";
+@import "@fullcalendar/list/main.css";
+@import "@fullcalendar/timegrid/main.css";
+@import "../assets/sass/init";
+@import "../assets/sass/vendors/plugins/_fullcalendar.scss";
+.full-calendar {
+    --pfc-bg-color: transparent;
+    --pfc-border-color: transparent;
+    --pfc-border: 1px solid var(--pfc-border-color);
+    background-color: var(--pfc-bg-color);
+    border: var(--pfc-border);
+}

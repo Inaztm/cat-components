@@ -1,5 +1,5 @@
-import { LitElement } from 'lit';
 import { Editor } from '@tiptap/core';
+import { LitElement } from 'lit';
 /**
  * An example element.
  *
