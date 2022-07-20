@@ -5,5 +5,5 @@
     "moduleResolution": "node",
     "skipLibCheck": true
   },
-  "include": ["vite.config.ts", "types/scss.d.ts"]
+  "include": ["vite.config.ts"]
 }

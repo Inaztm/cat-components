@@ -8,17 +8,17 @@ import { Calendar, CalendarOptions } from '@fullcalendar/core';
  * @csspart editor - The tiptap editor
  */
 export declare class FullCalendar extends LitElement {
-    static styles: import("lit").CSSResult;
-    value: any;
+    static styles: string;
+    value: Array<any>;
     options: CalendarOptions;
+    calendarInstance: Object;
     calendar: Calendar;
     firstUpdated(): void;
     setup(): void;
+    updateModel(): void;
     render(): import("lit-html").TemplateResult<1>;
-    _onAddNewEvent(value: string): void;
-    _onChange(value: string): void;
-    _onFocus(): void;
-    _onBlur(): void;
+    _onAddNewEvent(value: any): void;
+    _onChange(value: Array<any>): void;
     _onCreated(model: Calendar): void;
 }
 declare global {

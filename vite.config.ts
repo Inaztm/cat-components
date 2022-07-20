@@ -16,7 +16,13 @@ export default defineConfig({
   plugins: [
     {
       ...litcss(),
-      enforce: 'post'
+      enforce: 'post',
+      apply: 'serve'
+    },
+    {
+      ...litcss(),
+      enforce: 'post',
+      apply: 'build'
     }
   ]
 })

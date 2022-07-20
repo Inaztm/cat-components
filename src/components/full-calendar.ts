@@ -1,4 +1,4 @@
-import { html, LitElement } from 'lit'
+import { unsafeCSS, html, LitElement } from 'lit'
 import '@fullcalendar/core/vdom'
 import { customElement, property } from 'lit/decorators.js'
 import { Calendar, CalendarOptions } from '@fullcalendar/core';
@@ -10,6 +10,10 @@ import { makeEvent } from '../helpers';
 
 import fullCalendarStyle from './_full-calendar.scss';
 
+type FakeCalendarModel = {
+  model: Calendar | null
+}
+
 /**
  * An example element.
  *
@@ -18,7 +22,7 @@ import fullCalendarStyle from './_full-calendar.scss';
  */
 @customElement('full-calendar')
 export class FullCalendar extends LitElement {
-  static styles = fullCalendarStyle
+  static styles = unsafeCSS(fullCalendarStyle)
   
   @property({ type: Array })
   value: Array<any> = []
@@ -26,7 +30,7 @@ export class FullCalendar extends LitElement {
   @property({ type: Object })
   options: CalendarOptions = {}
 
-  calendarInstance: Object = { model: null }
+  calendarInstance: FakeCalendarModel = { model: null }
 
   calendar: Calendar = {} as Calendar
 
@@ -102,6 +106,7 @@ export class FullCalendar extends LitElement {
 
   _onCreated(model: Calendar) {
     if (model) {
+      // @ts-nocheck
       this.calendarInstance.model = model
       this.dispatchEvent(makeEvent('onCreated', { detail: { model } }));
     }
