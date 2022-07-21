@@ -1,4 +1,5 @@
 import { unsafeCSS, html, LitElement } from 'lit'
+import {classMap} from 'lit/directives/class-map.js';
 import '@fullcalendar/core/vdom'
 import { customElement, property } from 'lit/decorators.js'
 import { Calendar, CalendarOptions } from '@fullcalendar/core';
@@ -8,7 +9,7 @@ import listPlugin from "@fullcalendar/list";
 import interactionPlugin from "@fullcalendar/interaction";
 import { makeEvent } from '../helpers';
 
-import fullCalendarStyle from './_full-calendar.scss';
+import fullCalendarStyle from '../assets/sass/_full-calendar.scss';
 
 type FakeCalendarModel = {
   model: Calendar | null
@@ -29,6 +30,9 @@ export class FullCalendar extends LitElement {
 
   @property({ type: Object })
   options: CalendarOptions = {}
+
+  @property({type: Boolean})
+  sticky = false;
 
   calendarInstance: FakeCalendarModel = { model: null }
 
@@ -81,7 +85,8 @@ export class FullCalendar extends LitElement {
 
   // Render the UI as a function of component state
   render() {
-    return html`<div class="full-calendar"></div>`;
+    const classes = { 'sticky-header': this.sticky };
+    return html`<div class="full-calendar ${classMap(classes)}"></div>`;
   }
 
   // createRenderRoot() {
@@ -108,7 +113,7 @@ export class FullCalendar extends LitElement {
     if (model) {
       // @ts-nocheck
       this.calendarInstance.model = model
-      this.dispatchEvent(makeEvent('onCreated', { detail: { model } }));
+      this.dispatchEvent(makeEvent('onCreated', { detail: { model, comp: this } }));
     }
   }
 }

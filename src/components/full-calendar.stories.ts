@@ -13,7 +13,14 @@ export default {
     onCreated: { action: 'created' },
   },
   render: (args) => html`
-    <full-calendar style="width: 100%" @onChange=${args.onChange} @onCreated=${args.onCreated} .options=${args.options} .value=${args.value}></tiptap-editor>
+    <full-calendar
+      sticky
+      style="width: 100%; --pfc-top: 0; --pfc-th-top: 53px; --pfc-header-pined-bg-color: red;"
+      @onChange=${args.onChange}
+      @onCreated=${args.onCreated}
+      .options=${args.options}
+      .value=${args.value}
+    ></tiptap-editor>
   `,
 } as Meta
 

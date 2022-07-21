@@ -1,0 +1,36 @@
+@import "@fullcalendar/common/main.css";
+@import "@fullcalendar/daygrid/main.css";
+@import "@fullcalendar/list/main.css";
+@import "@fullcalendar/timegrid/main.css";
+@import "kt/init";
+@import "kt/vendors/plugins/_fullcalendar.scss";
+@import "kt/style";
+
+:host {
+    --pfc-bg-color: transparent;
+    --pfc-border-color: transparent;
+    --pfc-border: 1px solid var(--pfc-border-color);
+    --pfc-top: 0;
+    --pfc-th-top: 0;
+    --pfc-pined-bg-color: transparent;
+    --pfc-pined-space: 0.5em;
+}
+
+.full-calendar {
+    background-color: var(--pfc-bg-color);
+    border: var(--pfc-border);
+
+    &.sticky-header {
+        .fc-header-toolbar {
+            position: sticky;
+            top: var(--pfc-top);
+            z-index: 2;
+            margin-bottom: 0.5em;
+            background-color: var(--pfc-pined-bg-color); 
+            padding: var(--pfc-pined-space);
+        }
+        .fc-scrollgrid-section-header.fc-scrollgrid-section-sticky > * {
+            top: var(--pfc-th-top);
+        }
+    }
+}
