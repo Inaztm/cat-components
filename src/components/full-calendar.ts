@@ -43,7 +43,6 @@ export class FullCalendar extends LitElement {
   }
 
   setup() {
-    console.log({ 'this.value': this.value })
     const calendarOptions = {
       plugins: [dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin],
       headerToolbar: {
@@ -51,7 +50,6 @@ export class FullCalendar extends LitElement {
         center: "title",
         right: "dayGridMonth,timeGridWeek,timeGridDay",
       },
-      // initialDate: TODAY,
       navLinks: true, // can click day/week names to navigate views
       selectable: true,
       selectMirror: true,
@@ -65,8 +63,6 @@ export class FullCalendar extends LitElement {
       editable: true,
       dayMaxEvents: true, // allow "more" link when too many events
       events: this.value,
-      dateClick: this._onAddNewEvent.bind(this),
-      eventClick: this._onAddNewEvent.bind(this),
       ...this.options,
     } as CalendarOptions;
     console.log({ calendarOptions })
@@ -87,26 +83,6 @@ export class FullCalendar extends LitElement {
   render() {
     const classes = { 'sticky-header': this.sticky };
     return html`<div class="full-calendar ${classMap(classes)}"></div>`;
-  }
-
-  // createRenderRoot() {
-  //   /**
-  //    * Render template in light DOM. Note that shadow DOM features like 
-  //    * encapsulated CSS are unavailable.
-  //    */
-  //   return this;
-  // }
-
-  _onAddNewEvent(value: any) {
-    if (this.value !== value) {
-      // this.dispatchEvent(makeEvent('onChange', { detail: { value } }));
-    }
-  }
-
-  _onChange(value: Array<any>) {
-    if (this.value !== value) {
-      this.dispatchEvent(makeEvent('onChange', { detail: { value } }));
-    }
   }
 
   _onCreated(model: Calendar) {

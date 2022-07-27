@@ -15,7 +15,7 @@ export default {
   render: (args) => html`
     <full-calendar
       sticky
-      style="width: 100%; --pfc-top: 0; --pfc-th-top: 53px; --pfc-header-pined-bg-color: red;"
+      style="width: 100%; --pfc-top: 0; --pfc-th-top: 53px;"
       @onChange=${args.onChange}
       @onCreated=${args.onCreated}
       .options=${args.options}
